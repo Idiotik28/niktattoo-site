@@ -1,0 +1,429 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Nik — тату-мастер, Москва</title>
+<meta name="description" content="Авторские татуировки в технике блэкворк и дотворк. Москва, 7 лет опыта. Портфолио работ и запись на консультацию." />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="bg-fx" aria-hidden="true">
+  <canvas id="starCanvas"></canvas>
+</div>
+
+<div class="ribbons" id="ribbons" aria-hidden="true">
+  <div class="ribbons__row ribbons__row--1"><div class="ribbons__track" id="ribbonTrack1"></div></div>
+  <div class="ribbons__row ribbons__row--2"><div class="ribbons__track" id="ribbonTrack2"></div></div>
+  <div class="ribbons__row ribbons__row--3"><div class="ribbons__track" id="ribbonTrack3"></div></div>
+</div>
+
+<nav class="nav">
+  <div class="nav__group">
+    <a href="#about" class="nav__link"><span>Обо мне</span></a>
+    <a href="#works" class="nav__link"><span>Работы</span></a>
+    <a href="#process" class="nav__link"><span>Как проходит</span></a>
+    <a href="https://t.me/xa_cherepa" target="_blank" rel="noopener" class="nav__cta"><span>Записаться</span></a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="hero__content">
+    <svg class="hero__name" viewBox="0 0 620 220" role="img" aria-label="Nik">
+      <text x="50%" y="62%" text-anchor="middle" class="hero__name-path">Nik</text>
+    </svg>
+    <p class="hero__sub">Tattoo &middot; Москва</p>
+  </div>
+</header>
+
+<main>
+
+  <section id="about" class="wrap about">
+    <p class="section__eyebrow">Обо мне</p>
+    <p class="about__prose">
+      Семь лет я набиваю блэкворк, дотворк и тонкую линию — истории, а не картинки
+      из каталога. В работе чаще всего мифология, готика и животные: сюжеты, которые
+      держат форму и через десять лет, а не только на свежем фото. Работаю в Москве,
+      в собственной студии, по предварительной записи.
+    </p>
+    <p class="about__prose">
+      Беру эскизы с нуля под тело и историю клиента — присылайте референс в любом виде,
+      хоть скриншотом из телефона, а дальше разберёмся вместе, что из этого станет
+      вашим. Копирую чужие работы один в один только в исключительных случаях.
+    </p>
+  </section>
+
+  <section id="works" class="wrap">
+    <p class="section__eyebrow">Портфолио</p>
+
+    <div class="carousel" id="worksCarousel1">
+      <div class="carousel__track" id="worksTrack1">
+
+      <button class="gallery__item" data-caption="Огонь и лоза · чёрно-красный блэкворк">
+        <img src="assets/gallery/01-flame.jpg" alt="Тату в виде языков пламени и лозы на плече, чёрно-красный блэкворк" loading="lazy" />
+        <span class="gallery__caption">Огонь и лоза<span>Чёрно-красный блэкворк</span></span>
+      </button>
+
+      <button class="gallery__item" data-caption="Медуза · black & grey">
+        <img src="assets/gallery/02-medusa.jpg" alt="Портрет Медузы Горгоны, тату black and grey на предплечье" loading="lazy" />
+        <span class="gallery__caption">Медуза<span>Black &amp; grey</span></span>
+      </button>
+
+      <button class="gallery__item" data-caption="Паук · графичный блэкворк">
+        <img src="assets/gallery/03-spider.jpg" alt="Графичный паук в технике блэкворк на предплечье" loading="lazy" />
+        <span class="gallery__caption">Паук<span>Графичный блэкворк</span></span>
+      </button>
+
+      <button class="gallery__item" data-caption="Оскал · тёмный сюжет">
+        <img src="assets/gallery/04-jaws.jpg" alt="Тату в виде звериной пасти на колене, чёрная графика" loading="lazy" />
+        <span class="gallery__caption">Оскал<span>Чёрная графика</span></span>
+      </button>
+
+      <button class="gallery__item" data-caption="Волны · геометричный блэкворк">
+        <img src="assets/gallery/05-wave.jpg" alt="Геометричная тату с волнообразным узором в треугольнике" loading="lazy" />
+        <span class="gallery__caption">Волны<span>Геометричный блэкворк</span></span>
+      </button>
+
+      <button class="gallery__item" data-caption="Лиса · красная нить">
+        <img src="assets/gallery/06-fox-thread.jpg" alt="Девятихвостая лиса с красной нитью, тату на плече" loading="lazy" />
+        <span class="gallery__caption">Девятихвостая лиса<span>Акцент красной нитью</span></span>
+      </button>
+
+      <button class="gallery__item" data-caption="Лисёнок и пламя · тонкая линия">
+        <img src="assets/gallery/07-fox-flame.jpg" alt="Лисёнок с огненным хвостом, тонкая линия с красным" loading="lazy" />
+        <span class="gallery__caption">Лисёнок и пламя<span>Тонкая линия + красный</span></span>
+      </button>
+
+      </div>
+    </div>
+
+    <div class="carousel" id="worksCarousel2">
+      <div class="carousel__track" id="worksTrack2">
+
+      <button class="gallery__item" data-caption="Ангел · line-art с красным">
+        <img src="assets/gallery/08-angel.jpg" alt="Ангел с короной, line-art с красным орнаментом" loading="lazy" />
+        <span class="gallery__caption">Ангел<span>Line-art + красный</span></span>
+      </button>
+
+      <button class="gallery__item" data-caption="Паутина · классический дотворк">
+        <img src="assets/gallery/09-web-dotwork.jpg" alt="Паутина в технике дотворк на локтевом сгибе" loading="lazy" />
+        <span class="gallery__caption">Паутина<span>Классический дотворк</span></span>
+      </button>
+
+      <button class="gallery__item" data-caption="Шипы и роза · парная работа">
+        <img src="assets/gallery/10-thorn-rose.jpg" alt="Шипы и роза, парная тату на двух руках" loading="lazy" />
+        <span class="gallery__caption">Шипы и роза<span>Парная работа</span></span>
+      </button>
+
+      <button class="gallery__item" data-caption="Звезда · спонтанный красный">
+        <img src="assets/gallery/11-star.jpg" alt="Красная звезда на плече, спонтанный дизайн" loading="lazy" />
+        <span class="gallery__caption">Звезда<span>Спонтанный красный</span></span>
+      </button>
+
+      <button class="gallery__item" data-caption="Лис · чистая линия">
+        <img src="assets/gallery/12-fox-line.jpg" alt="Лис в технике чистой линии на плече" loading="lazy" />
+        <span class="gallery__caption">Лис<span>Чистая линия</span></span>
+      </button>
+
+      <button class="gallery__item" data-caption="Коготь · экспрессивный блэкворк">
+        <img src="assets/gallery/13-claw.jpg" alt="Экспрессивный чёрный узор на локте, блэкворк" loading="lazy" />
+        <span class="gallery__caption">Коготь<span>Экспрессивный блэкворк</span></span>
+      </button>
+
+      <button class="gallery__item" data-caption="Кошка с третьим глазом · графика">
+        <img src="assets/gallery/14-cat.jpg" alt="Кошка с третьим глазом и луной, графичная тату на предплечье" loading="lazy" />
+        <span class="gallery__caption">Кошка с третьим глазом<span>Графика</span></span>
+      </button>
+
+      </div>
+    </div>
+
+    <div class="carousel" id="worksCarousel3">
+      <div class="carousel__track" id="worksTrack3">
+
+      <button class="gallery__item" data-caption="Череп барана · орнамент">
+        <img src="assets/gallery/15-ram-skull.jpg" alt="Череп барана с дымом, орнаментальный блэкворк на груди" loading="lazy" />
+        <span class="gallery__caption">Череп барана<span>Орнаментальный блэкворк</span></span>
+      </button>
+
+      <button class="gallery__item" data-caption="Шипастый узор · крупная форма">
+        <img src="assets/gallery/16-spine.jpg" alt="Шипастый органический узор на плече и руке" loading="lazy" />
+        <span class="gallery__caption">Шипастый узор<span>Крупная форма</span></span>
+      </button>
+
+      <button class="gallery__item" data-caption="Дракон и сакура · тонкая линия">
+        <img src="assets/gallery/17-dragon-blossom.jpg" alt="Дракон с ветвями сакуры, тонкая линия с красным" loading="lazy" />
+        <span class="gallery__caption">Дракон и сакура<span>Тонкая линия + красный</span></span>
+      </button>
+
+      <button class="gallery__item" data-caption="Бабочка и пламя · black & red">
+        <img src="assets/gallery/18-butterfly.jpg" alt="Бабочка с красным пламенем на плече" loading="lazy" />
+        <span class="gallery__caption">Бабочка и пламя<span>Black &amp; red</span></span>
+      </button>
+
+      <button class="gallery__item" data-caption="Лесной дух · тонкая линия">
+        <img src="assets/gallery/19-forest-creature.jpg" alt="Лесное существо с грибами и ветками, тонкая линия с красным" loading="lazy" />
+        <span class="gallery__caption">Лесной дух<span>Тонкая линия + акцент</span></span>
+      </button>
+
+      <button class="gallery__item" data-caption="Дракон · крупная форма">
+        <img src="assets/gallery/20-dragon-big.jpg" alt="Крупный дракон с красным акцентом, парная работа на двух руках" loading="lazy" />
+        <span class="gallery__caption">Дракон<span>Крупная форма</span></span>
+      </button>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="process" class="wrap">
+    <p class="section__eyebrow">Как проходит запись</p>
+    <ol class="process__list">
+      <li class="process__item">
+        <svg class="process__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H9l-4 4V5z"/></svg>
+        <div class="process__body">
+          <span class="process__index">01</span>
+          <h3 class="process__title">Опишите идею</h3>
+          <p class="process__hint">Место, размер, референс</p>
+        </div>
+      </li>
+      <li class="process__item">
+        <svg class="process__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l1-4L16 5l3 3L8 19l-4 1z"/><path d="M14 7l3 3"/></svg>
+        <div class="process__body">
+          <span class="process__index">02</span>
+          <h3 class="process__title">Обсуждаем эскиз</h3>
+          <p class="process__hint">Собираю композицию под вас</p>
+        </div>
+      </li>
+      <li class="process__item">
+        <svg class="process__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.59 13.41L13.41 20.59a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><circle cx="7" cy="7" r="1.1" fill="currentColor" stroke="none"/></svg>
+        <div class="process__body">
+          <span class="process__index">03</span>
+          <h3 class="process__title">Считаем стоимость</h3>
+          <p class="process__hint">Под конкретный эскиз, без прайса</p>
+        </div>
+      </li>
+      <li class="process__item">
+        <svg class="process__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="1"/><path d="M3 9h18"/><path d="M8 3v4"/><path d="M16 3v4"/></svg>
+        <div class="process__body">
+          <span class="process__index">04</span>
+          <h3 class="process__title">Назначаем сеанс</h3>
+          <p class="process__hint">Студия в Москве, удобная дата</p>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <section id="contact" class="wrap contact">
+    <p class="section__eyebrow">Запись</p>
+    <a class="button" href="https://t.me/xa_cherepa" target="_blank" rel="noopener">Написать в Telegram</a>
+
+    <div class="contact__icons">
+      <a href="https://t.me/xa_cherepa" target="_blank" rel="noopener" aria-label="Telegram" title="Telegram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+      </a>
+      <a href="https://wa.me/79999999999" target="_blank" rel="noopener" aria-label="WhatsApp" title="WhatsApp">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.7-1.2A9 9 0 1 0 12 3z"/></svg>
+      </a>
+      <a href="https://vk.com/PLACEHOLDER" target="_blank" rel="noopener" aria-label="ВКонтакте" title="ВКонтакте" class="contact__vk">VK</a>
+      <a href="tel:+79999999999" aria-label="Позвонить" title="Позвонить">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox__close" id="lightboxClose">Закрыть ✕</button>
+  <img id="lightboxImg" src="" alt="" />
+  <p class="lightbox__caption" id="lightboxCaption"></p>
+</div>
+
+<script>
+  // Cosmic starfield — sparse, static, low-opacity
+  (function () {
+    const canvas = document.getElementById('starCanvas');
+    const ctx = canvas.getContext('2d');
+    const dpr = Math.min(devicePixelRatio || 1, 2);
+
+    function draw() {
+      const w = (canvas.width = canvas.offsetWidth * dpr);
+      const h = (canvas.height = canvas.offsetHeight * dpr);
+      ctx.clearRect(0, 0, w, h);
+
+      const count = Math.round((w * h) / (14000 * dpr * dpr));
+      for (let i = 0; i < count; i++) {
+        const x = Math.random() * w;
+        const y = Math.random() * h;
+        const r = (Math.random() * 0.9 + 0.3) * dpr;
+        const alpha = Math.random() * 0.5 + 0.15;
+        ctx.beginPath();
+        ctx.fillStyle = `rgba(237, 230, 220, ${alpha})`;
+        ctx.arc(x, y, r, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    }
+
+    draw();
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(draw, 200);
+    });
+
+    // Subtle mouse parallax
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      let rafId = null;
+      window.addEventListener('mousemove', (e) => {
+        if (rafId) return;
+        rafId = requestAnimationFrame(() => {
+          const nx = e.clientX / window.innerWidth - 0.5;
+          const ny = e.clientY / window.innerHeight - 0.5;
+          canvas.style.transform = `translate(${nx * -14}px, ${ny * -14}px)`;
+          rafId = null;
+        });
+      });
+    }
+  })();
+
+  // Background ribbons — horizontal marquee rows that intensify on scroll toward the portfolio
+  (function () {
+    const rows = [
+      { track: document.getElementById('ribbonTrack1'), images: ['assets/gallery/01-flame.jpg', 'assets/gallery/02-medusa.jpg', 'assets/gallery/05-wave.jpg', 'assets/gallery/08-angel.jpg', 'assets/gallery/11-star.jpg', 'assets/gallery/14-cat.jpg'] },
+      { track: document.getElementById('ribbonTrack2'), images: ['assets/gallery/03-spider.jpg', 'assets/gallery/06-fox-thread.jpg', 'assets/gallery/09-web-dotwork.jpg', 'assets/gallery/13-claw.jpg', 'assets/gallery/17-dragon-blossom.jpg', 'assets/gallery/20-dragon-big.jpg'] },
+      { track: document.getElementById('ribbonTrack3'), images: ['assets/gallery/04-jaws.jpg', 'assets/gallery/07-fox-flame.jpg', 'assets/gallery/10-thorn-rose.jpg', 'assets/gallery/12-fox-line.jpg', 'assets/gallery/16-spine.jpg', 'assets/gallery/19-forest-creature.jpg'] },
+    ];
+
+    rows.forEach(({ track, images }) => {
+      const sequence = images.concat(images);
+      sequence.forEach((src) => {
+        const img = document.createElement('img');
+        img.src = src;
+        img.alt = '';
+        img.loading = 'lazy';
+        track.appendChild(img);
+      });
+    });
+
+    const ribbons = document.getElementById('ribbons');
+    const works = document.getElementById('works');
+
+    const startOpacity = 0.55;
+    const floorOpacity = 0.08;
+
+    function updateOpacity() {
+      const fadeEnd = works.offsetTop - window.innerHeight * 0.15;
+      const progress = 1 - Math.min(1, Math.max(0, window.scrollY / Math.max(fadeEnd, 1)));
+      ribbons.style.opacity = (floorOpacity + progress * (startOpacity - floorOpacity)).toFixed(3);
+    }
+
+    updateOpacity();
+    window.addEventListener('scroll', updateOpacity, { passive: true });
+    window.addEventListener('resize', updateOpacity);
+  })();
+
+  // Lightbox — shared across all carousel rows
+  const lightboxApi = (function () {
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const lightboxCaption = document.getElementById('lightboxCaption');
+    const closeBtn = document.getElementById('lightboxClose');
+
+    function open(item) {
+      const img = item.querySelector('img');
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt;
+      lightboxCaption.textContent = item.dataset.caption || '';
+      lightbox.classList.add('is-open');
+    }
+    function close() {
+      lightbox.classList.remove('is-open');
+      lightboxImg.src = '';
+    }
+    closeBtn.addEventListener('click', close);
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) close();
+    });
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') close();
+    });
+
+    return { open };
+  })();
+
+  // Works carousel rows — infinite auto-scroll, pausable, draggable
+  function createCarousel(rootId, trackId, speed, reverse) {
+    const root = document.getElementById(rootId);
+    const track = document.getElementById(trackId);
+
+    const originalChildren = Array.from(track.children);
+    originalChildren.forEach((child) => track.appendChild(child.cloneNode(true)));
+
+    let paused = false;
+    let dragging = false;
+    let dragMoved = false;
+    let startX = 0;
+    let startScroll = 0;
+    let pos = 0;
+    const dir = reverse ? -1 : 1;
+
+    function loop() {
+      if (!paused && !dragging) {
+        const half = track.scrollWidth / 2;
+        pos += speed * dir;
+        if (pos >= half) pos -= half;
+        if (pos < 0) pos += half;
+        root.scrollLeft = pos;
+      }
+      requestAnimationFrame(loop);
+    }
+
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      pos = reverse ? track.scrollWidth / 4 : 0;
+      root.scrollLeft = pos;
+      requestAnimationFrame(loop);
+    }
+
+    root.addEventListener('mouseenter', () => (paused = true));
+    root.addEventListener('mouseleave', () => {
+      paused = false;
+      dragging = false;
+    });
+
+    root.addEventListener('pointerdown', (e) => {
+      dragging = true;
+      dragMoved = false;
+      startX = e.clientX;
+      startScroll = root.scrollLeft;
+    });
+    window.addEventListener('pointermove', (e) => {
+      if (!dragging) return;
+      const dx = e.clientX - startX;
+      if (Math.abs(dx) > 4) dragMoved = true;
+      root.scrollLeft = startScroll - dx;
+      pos = root.scrollLeft;
+    });
+    function endDrag() {
+      if (!dragging) return;
+      dragging = false;
+      pos = root.scrollLeft;
+      setTimeout(() => (dragMoved = false), 50);
+    }
+    window.addEventListener('pointerup', endDrag);
+    window.addEventListener('pointercancel', endDrag);
+
+    track.addEventListener('click', (e) => {
+      const item = e.target.closest('.gallery__item');
+      if (!item || dragMoved) return;
+      lightboxApi.open(item);
+    });
+  }
+
+  createCarousel('worksCarousel1', 'worksTrack1', 0.5, false);
+  createCarousel('worksCarousel2', 'worksTrack2', 0.4, true);
+  createCarousel('worksCarousel3', 'worksTrack3', 0.55, false);
+</script>
+
+</body>
+</html>
