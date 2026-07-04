@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Work+Sans:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Work+Sans:wght@400;500;600&display=swap');
 
 :root {
   --bg: #151312;
@@ -10,7 +10,6 @@
   --accent-bright: #b23b2e;
   --hairline: rgba(237, 230, 220, 0.12);
 
-  --signature: 'Tangerine', cursive;
   --display: 'Fraunces', serif;
   --body: 'Work Sans', sans-serif;
 
@@ -100,6 +99,13 @@ main {
   pointer-events: none;
   opacity: 0.1;
   transition: opacity 0.15s linear;
+}
+
+@media (max-width: 700px) {
+  /* Decorative background ribbons are too heavy for mobile GPUs — drop them */
+  .ribbons {
+    display: none;
+  }
 }
 
 .ribbons__row {
@@ -261,6 +267,28 @@ img {
   transition: background 0.25s ease;
 }
 
+@media (max-width: 700px) {
+  .nav {
+    padding: 12px 14px;
+    font-size: 10px;
+    letter-spacing: 0.06em;
+  }
+  .nav__group {
+    gap: 6px;
+    flex-wrap: wrap;
+    row-gap: 6px;
+  }
+  .nav__link {
+    padding: 7px 10px;
+  }
+  .nav__cta {
+    padding: 7px 12px;
+  }
+  .hero {
+    padding-top: 150px;
+  }
+}
+
 .nav__cta:hover,
 .nav__cta:focus-visible {
   background: var(--accent-bright);
@@ -289,34 +317,30 @@ img {
   gap: 4px;
 }
 
-.hero__name {
-  width: min(90vw, 640px);
+.hero__logo {
+  width: clamp(150px, 22vw, 240px);
   height: auto;
-  color: var(--ink);
   margin: 0;
-}
-
-.hero__name-path {
-  font-family: var(--signature);
-  font-size: 260px;
-  stroke: var(--ink);
-  fill: none;
-  stroke-width: 0.8;
-  stroke-dasharray: 1400;
-  stroke-dashoffset: 1400;
-  animation: draw 2.2s ease forwards 0.3s;
+  filter: drop-shadow(0 0 26px rgba(237, 230, 220, 0.35));
+  opacity: 0;
+  animation: logoIn 1.4s ease forwards 0.2s;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .hero__name-path {
+  .hero__logo {
     animation: none;
-    stroke-dashoffset: 0;
+    opacity: 1;
   }
 }
 
-@keyframes draw {
+@keyframes logoIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.98);
+  }
   to {
-    stroke-dashoffset: 0;
+    opacity: 1;
+    transform: translateY(0) scale(1);
   }
 }
 
@@ -433,6 +457,11 @@ section {
   .gallery__item {
     width: 190px;
     height: 240px;
+  }
+  .gallery__caption {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background: linear-gradient(to top, rgba(10, 9, 8, 0.92), transparent);
   }
 }
 

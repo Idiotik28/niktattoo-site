@@ -30,9 +30,7 @@
 
 <header class="hero" id="top">
   <div class="hero__content">
-    <svg class="hero__name" viewBox="0 0 620 220" role="img" aria-label="Nik">
-      <text x="50%" y="62%" text-anchor="middle" class="hero__name-path">Nik</text>
-    </svg>
+    <img class="hero__logo" src="assets/brand/logo.png" alt="Nik — авторский логотип" />
     <p class="hero__sub">Tattoo &middot; Москва</p>
   </div>
 </header>
@@ -288,7 +286,8 @@
   })();
 
   // Background ribbons — horizontal marquee rows that intensify on scroll toward the portfolio
-  (function () {
+  // Skipped entirely on narrow/mobile viewports: heavy for weaker GPUs, and hidden via CSS anyway
+  if (window.matchMedia('(min-width: 701px)').matches) (function () {
     const rows = [
       { track: document.getElementById('ribbonTrack1'), images: ['assets/gallery/01-flame.jpg', 'assets/gallery/02-medusa.jpg', 'assets/gallery/05-wave.jpg', 'assets/gallery/08-angel.jpg', 'assets/gallery/11-star.jpg', 'assets/gallery/14-cat.jpg'] },
       { track: document.getElementById('ribbonTrack2'), images: ['assets/gallery/03-spider.jpg', 'assets/gallery/06-fox-thread.jpg', 'assets/gallery/09-web-dotwork.jpg', 'assets/gallery/13-claw.jpg', 'assets/gallery/17-dragon-blossom.jpg', 'assets/gallery/20-dragon-big.jpg'] },
@@ -385,17 +384,26 @@
       requestAnimationFrame(loop);
     }
 
-    root.addEventListener('mouseenter', () => (paused = true));
-    root.addEventListener('mouseleave', () => {
-      paused = false;
-      dragging = false;
+    // Hover-pause only for real mice — touch devices synthesize a single
+    // pointerenter with no matching leave, which would freeze autoplay forever.
+    root.addEventListener('pointerenter', (e) => {
+      if (e.pointerType === 'mouse') paused = true;
+    });
+    root.addEventListener('pointerleave', (e) => {
+      if (e.pointerType === 'mouse') paused = false;
+      endDrag();
     });
 
+    let dragWatchdog = null;
     root.addEventListener('pointerdown', (e) => {
       dragging = true;
       dragMoved = false;
       startX = e.clientX;
       startScroll = root.scrollLeft;
+      clearTimeout(dragWatchdog);
+      // Safety net: if a pointerup/pointercancel is ever missed (happens
+      // occasionally on mobile), don't let the row stay frozen forever.
+      dragWatchdog = setTimeout(endDrag, 4000);
     });
     window.addEventListener('pointermove', (e) => {
       if (!dragging) return;
@@ -407,6 +415,7 @@
     function endDrag() {
       if (!dragging) return;
       dragging = false;
+      clearTimeout(dragWatchdog);
       pos = root.scrollLeft;
       setTimeout(() => (dragMoved = false), 50);
     }
