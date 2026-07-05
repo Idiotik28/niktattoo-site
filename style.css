@@ -565,71 +565,75 @@ section {
   color: var(--accent-bright);
 }
 
-/* ---------- Process ---------- */
+/* ---------- Mid-page CTA ---------- */
 
-.process__list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: grid;
-  gap: 0;
+.mid-cta {
+  text-align: center;
+}
+
+.mid-cta__text {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--ink);
+  max-width: 40ch;
+  margin: 0 auto 28px;
+}
+
+/* ---------- FAQ ---------- */
+
+.faq__list {
   border-top: 1px solid var(--hairline);
 }
 
-.process__item {
-  display: grid;
-  grid-template-columns: 40px minmax(0, 1fr);
-  align-items: center;
-  gap: 24px;
-  padding: 26px 0;
+.faq__item {
   border-bottom: 1px solid var(--hairline);
+  padding: 22px 0;
 }
 
-.process__icon {
-  width: 22px;
-  height: 22px;
-  color: var(--accent-bright);
-}
-
-.process__body {
+.faq__item summary {
   display: flex;
-  align-items: baseline;
-  flex-wrap: wrap;
-  column-gap: 16px;
-  row-gap: 4px;
-}
-
-.process__index {
-  font-family: var(--display);
-  font-style: italic;
-  color: var(--muted);
-  font-size: 1.1rem;
-}
-
-.process__title {
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  cursor: pointer;
+  list-style: none;
   font-family: var(--body);
   font-weight: 500;
-  font-size: 13px;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 0.04em;
   color: var(--ink);
-  margin: 0;
 }
 
-.process__hint {
+.faq__item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq__item summary::after {
+  content: '+';
+  flex: 0 0 auto;
+  font-family: var(--display);
+  font-size: 1.2rem;
+  color: var(--muted);
+  transition: transform 0.25s ease;
+}
+
+.faq__item[open] summary::after {
+  transform: rotate(45deg);
+}
+
+.faq__item summary:hover,
+.faq__item summary:focus-visible {
+  color: var(--ink);
+}
+
+.faq__item p {
   font-family: var(--display);
   font-style: italic;
-  font-size: 13px;
+  font-size: 14px;
   color: var(--muted);
-  margin: 0;
-  flex-basis: 100%;
-}
-
-@media (min-width: 640px) {
-  .process__hint {
-    flex-basis: auto;
-    margin-left: auto;
-  }
+  max-width: var(--measure);
+  margin: 16px 0 0;
 }
 
 /* ---------- Contact ---------- */
@@ -665,6 +669,14 @@ section {
 .button:active {
   transform: translateY(0);
   box-shadow: 0 6px 18px rgba(138, 42, 34, 0.35);
+}
+
+.contact__coupon {
+  font-family: var(--body);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  margin: 16px 0 0;
 }
 
 .contact__icons {
