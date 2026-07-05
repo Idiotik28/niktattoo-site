@@ -210,6 +210,22 @@ img {
   align-items: center;
 }
 
+@media (min-width: 701px) {
+  /* Desktop only: links stay centered like before, logo floats independently in the corner */
+  .nav {
+    justify-content: center;
+  }
+  .nav__brand {
+    position: absolute;
+    left: 32px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .nav__brand img {
+    height: 46px;
+  }
+}
+
 .nav__brand img {
   height: 38px;
   width: auto;
@@ -586,7 +602,9 @@ section {
 }
 
 .mid-cta__text--big {
-  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-family: var(--body);
+  font-style: normal;
+  font-size: clamp(1.3rem, 2.6vw, 1.7rem);
   font-weight: 600;
   max-width: 24ch;
 }
@@ -594,12 +612,17 @@ section {
 /* ---------- FAQ ---------- */
 
 .faq__list {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
   border-top: 1px solid var(--hairline);
 }
 
 .faq__item {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  box-sizing: border-box;
   border-bottom: 1px solid var(--hairline);
-  padding: 22px 0;
+  padding: 22px max(32px, calc((100vw - 1180px) / 2 + 32px));
 }
 
 .faq__item summary {
