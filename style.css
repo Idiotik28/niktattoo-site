@@ -604,25 +604,21 @@ section {
 .mid-cta__text--big {
   font-family: var(--body);
   font-style: normal;
-  font-size: clamp(1.3rem, 2.6vw, 1.7rem);
+  font-size: clamp(1rem, 1.8vw, 1.2rem);
   font-weight: 600;
-  max-width: 24ch;
+  max-width: none;
+  white-space: nowrap;
 }
 
 /* ---------- FAQ ---------- */
 
 .faq__list {
-  width: 100vw;
-  margin-left: calc(50% - 50vw);
   border-top: 1px solid var(--hairline);
 }
 
 .faq__item {
-  width: 100vw;
-  margin-left: calc(50% - 50vw);
-  box-sizing: border-box;
   border-bottom: 1px solid var(--hairline);
-  padding: 22px max(32px, calc((100vw - 1180px) / 2 + 32px));
+  padding: 22px 0;
 }
 
 .faq__item summary {
@@ -630,7 +626,6 @@ section {
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  max-width: 640px;
   cursor: pointer;
   list-style: none;
   font-family: var(--body);
