@@ -102,16 +102,6 @@ main {
   transition: opacity 0.15s linear;
 }
 
-@media (max-width: 700px) {
-  /* Lighter version for mobile GPUs: two rows instead of three, smaller strip height */
-  .ribbons__row--3 {
-    display: none;
-  }
-  .ribbons__row {
-    height: 100px;
-  }
-}
-
 .ribbons__row {
   position: absolute;
   left: 0;
@@ -206,12 +196,24 @@ img {
   right: 0;
   z-index: 50;
   display: flex;
-  justify-content: center;
-  padding: 18px 32px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 32px;
   font-family: var(--body);
   font-size: 12px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
+}
+
+.nav__brand {
+  display: flex;
+  align-items: center;
+}
+
+.nav__brand img {
+  height: 38px;
+  width: auto;
+  display: block;
 }
 
 .nav__group {
@@ -276,6 +278,9 @@ img {
     padding: 12px 14px;
     font-size: 10px;
     letter-spacing: 0.06em;
+  }
+  .nav__brand img {
+    height: 28px;
   }
   .nav__group {
     gap: 6px;
@@ -580,10 +585,15 @@ section {
   margin: 0 auto 28px;
 }
 
+.mid-cta__text--big {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 600;
+  max-width: 24ch;
+}
+
 /* ---------- FAQ ---------- */
 
 .faq__list {
-  max-width: 640px;
   border-top: 1px solid var(--hairline);
 }
 
@@ -597,6 +607,7 @@ section {
   align-items: center;
   justify-content: space-between;
   gap: 16px;
+  max-width: 640px;
   cursor: pointer;
   list-style: none;
   font-family: var(--body);
@@ -641,6 +652,10 @@ section {
 
 .contact {
   text-align: center;
+}
+
+.contact--tight {
+  padding-top: 20px;
 }
 
 .button {

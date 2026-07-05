@@ -20,6 +20,7 @@
 </div>
 
 <nav class="nav">
+  <a href="#top" class="nav__brand"><img src="assets/brand/logo.png" alt="Nik" /></a>
   <div class="nav__group">
     <a href="#about" class="nav__link"><span>Обо мне</span></a>
     <a href="#works" class="nav__link"><span>Работы</span></a>
@@ -177,9 +178,8 @@
     </div>
   </section>
 
-  <section id="contact" class="wrap contact">
-    <p class="section__eyebrow">Запись</p>
-    <p class="mid-cta__text">Скидка на первую татуировку 15%</p>
+  <section id="contact" class="wrap contact contact--tight">
+    <p class="mid-cta__text mid-cta__text--big">Скидка на первую татуировку 15%</p>
     <a class="button" href="https://t.me/xa_cherepa" target="_blank" rel="noopener">Написать в Telegram</a>
 
     <div class="contact__icons">
@@ -282,21 +282,15 @@
   })();
 
   // Background ribbons — horizontal marquee rows that intensify on scroll toward the portfolio
-  // Mobile gets a lighter version: two rows instead of three, fewer images per row
   (function () {
-    const isMobile = window.matchMedia('(max-width: 700px)').matches;
-
-    const allRows = [
+    const rows = [
       { track: document.getElementById('ribbonTrack1'), images: ['assets/gallery/01-flame.jpg', 'assets/gallery/02-medusa.jpg', 'assets/gallery/05-wave.jpg', 'assets/gallery/08-angel.jpg', 'assets/gallery/11-star.jpg', 'assets/gallery/14-cat.jpg'] },
       { track: document.getElementById('ribbonTrack2'), images: ['assets/gallery/03-spider.jpg', 'assets/gallery/06-fox-thread.jpg', 'assets/gallery/09-web-dotwork.jpg', 'assets/gallery/13-claw.jpg', 'assets/gallery/17-dragon-blossom.jpg', 'assets/gallery/20-dragon-big.jpg'] },
       { track: document.getElementById('ribbonTrack3'), images: ['assets/gallery/04-jaws.jpg', 'assets/gallery/07-fox-flame.jpg', 'assets/gallery/10-thorn-rose.jpg', 'assets/gallery/12-fox-line.jpg', 'assets/gallery/16-spine.jpg', 'assets/gallery/19-forest-creature.jpg'] },
     ];
 
-    const rows = isMobile ? allRows.slice(0, 2) : allRows;
-
     rows.forEach(({ track, images }) => {
-      const list = isMobile ? images.slice(0, 4) : images;
-      const sequence = list.concat(list);
+      const sequence = images.concat(images);
       sequence.forEach((src) => {
         const img = document.createElement('img');
         img.src = src;
