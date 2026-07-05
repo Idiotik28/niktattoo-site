@@ -318,10 +318,10 @@ img {
 }
 
 .hero__logo {
-  width: clamp(150px, 22vw, 240px);
+  width: clamp(110px, 16vw, 170px);
   height: auto;
   margin: 0;
-  filter: drop-shadow(0 0 26px rgba(237, 230, 220, 0.35));
+  filter: drop-shadow(0 0 20px rgba(148, 138, 126, 0.4));
   opacity: 0;
   animation: logoIn 1.4s ease forwards 0.2s;
 }
