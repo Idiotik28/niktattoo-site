@@ -100,6 +100,7 @@ main {
   pointer-events: none;
   opacity: 0.1;
   transition: opacity 0.15s linear;
+  will-change: opacity;
 }
 
 .ribbons__row {
@@ -126,6 +127,8 @@ main {
   gap: 14px;
   width: max-content;
   height: 100%;
+  will-change: transform;
+  transform: translateZ(0);
 }
 
 .ribbons__row--1 .ribbons__track {
@@ -311,6 +314,9 @@ img {
   }
   .hero {
     padding-top: 150px;
+  }
+  .ribbons__row {
+    height: 230px;
   }
 }
 

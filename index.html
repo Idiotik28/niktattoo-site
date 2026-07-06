@@ -306,15 +306,36 @@
     const startOpacity = 0.55;
     const floorOpacity = 0.08;
 
-    function updateOpacity() {
-      const fadeEnd = works.offsetTop - window.innerHeight * 0.15;
-      const progress = 1 - Math.min(1, Math.max(0, window.scrollY / Math.max(fadeEnd, 1)));
-      ribbons.style.opacity = (floorOpacity + progress * (startOpacity - floorOpacity)).toFixed(3);
+    // Layout read (offsetTop) is cached instead of recomputed on every
+    // scroll event - that repeated read/write on each pixel of scroll was
+    // the main source of stutter on mobile. Only recalculated on resize.
+    let fadeEnd = 1;
+    function recalcFadeEnd() {
+      fadeEnd = Math.max(works.offsetTop - window.innerHeight * 0.15, 1);
     }
 
+    let ticking = false;
+    function updateOpacity() {
+      const progress = 1 - Math.min(1, Math.max(0, window.scrollY / fadeEnd));
+      ribbons.style.opacity = (floorOpacity + progress * (startOpacity - floorOpacity)).toFixed(3);
+      ticking = false;
+    }
+
+    // Scroll events can fire many times per frame - collapse them to at
+    // most one style write per animation frame.
+    function onScroll() {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(updateOpacity);
+    }
+
+    recalcFadeEnd();
     updateOpacity();
-    window.addEventListener('scroll', updateOpacity, { passive: true });
-    window.addEventListener('resize', updateOpacity);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', () => {
+      recalcFadeEnd();
+      updateOpacity();
+    });
   })();
 
   // Lightbox — shared across all carousel rows
