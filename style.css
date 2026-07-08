@@ -315,8 +315,27 @@ img {
   .hero {
     padding-top: 150px;
   }
+
+  /* Static, evenly-spaced rows instead of animated absolute-positioned
+     ones. flex layout physically cannot overlap regardless of screen
+     height (unlike the desktop top:12%/44%/76% + fixed height math,
+     which only works for the viewport heights it was tuned against).
+     Freezing the marquee animation also removes the continuous
+     transform/repaint cost that was the main source of scroll jank. */
+  .ribbons {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
   .ribbons__row {
-    height: 230px;
+    position: static;
+    height: auto;
+    flex: 1;
+  }
+  .ribbons__row--1 .ribbons__track,
+  .ribbons__row--2 .ribbons__track,
+  .ribbons__row--3 .ribbons__track {
+    animation: none;
   }
 }
 
