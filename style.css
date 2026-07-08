@@ -323,9 +323,9 @@ img {
      moves. */
   .ribbons {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(78px, 1fr));
-    grid-auto-rows: 108px;
-    gap: 5px;
+    grid-template-columns: repeat(auto-fill, minmax(115px, 1fr));
+    grid-auto-rows: 150px;
+    gap: 6px;
   }
   .ribbons__row,
   .ribbons__track {
@@ -335,6 +335,13 @@ img {
   .ribbons__row--2 .ribbons__track,
   .ribbons__row--3 .ribbons__track {
     animation: none;
+  }
+  /* Each track holds its 6 images twice (leftover from the old infinite
+     marquee, which needed a duplicated copy to loop seamlessly). The
+     grid doesn't scroll, so only keep the first copy - otherwise the
+     same 6 photos per row show up twice in the mosaic. */
+  .ribbons__track img:nth-child(n + 7) {
+    display: none;
   }
   .ribbons__track img {
     width: 100%;
