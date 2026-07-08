@@ -316,25 +316,33 @@ img {
     padding-top: 150px;
   }
 
-  /* Static, evenly-spaced rows instead of animated absolute-positioned
-     ones. flex layout physically cannot overlap regardless of screen
-     height (unlike the desktop top:12%/44%/76% + fixed height math,
-     which only works for the viewport heights it was tuned against).
-     Freezing the marquee animation also removes the continuous
-     transform/repaint cost that was the main source of scroll jank. */
+  /* Dense static photo grid instead of 3 animated rows. The row/track
+     wrappers are unwrapped via display:contents so every <img> becomes
+     a direct grid item - no JS changes needed, no overlap possible
+     (grid layout can't overlap), and no animation cost since nothing
+     moves. */
   .ribbons {
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(78px, 1fr));
+    grid-auto-rows: 108px;
+    gap: 5px;
   }
-  .ribbons__row {
-    position: static;
-    height: auto;
-    flex: 1;
+  .ribbons__row,
+  .ribbons__track {
+    display: contents;
   }
   .ribbons__row--1 .ribbons__track,
   .ribbons__row--2 .ribbons__track,
   .ribbons__row--3 .ribbons__track {
+    animation: none;
+  }
+  .ribbons__track img {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: auto;
+    object-fit: cover;
+    border-radius: 0;
+    filter: grayscale(0.35) contrast(1.05);
     animation: none;
   }
 }
