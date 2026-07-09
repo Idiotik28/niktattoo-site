@@ -107,7 +107,7 @@ main {
   position: absolute;
   left: 0;
   width: 100%;
-  height: 130px;
+  height: 210px;
   overflow: hidden;
   filter: grayscale(0.4) contrast(1.05);
 }
@@ -316,40 +316,23 @@ img {
     padding-top: 150px;
   }
 
-  /* Dense static photo grid instead of 3 animated rows. The row/track
-     wrappers are unwrapped via display:contents so every <img> becomes
-     a direct grid item - no JS changes needed, no overlap possible
-     (grid layout can't overlap), and no animation cost since nothing
-     moves. */
+  /* Static, evenly-spaced rows (back to the ribbon look, not a grid).
+     flex layout physically cannot overlap regardless of screen height -
+     that's what broke last time with fixed top:%/height math. Animation
+     stays off since that was the main source of scroll jank. */
   .ribbons {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(115px, 1fr));
-    grid-auto-rows: 150px;
-    gap: 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
   }
-  .ribbons__row,
-  .ribbons__track {
-    display: contents;
+  .ribbons__row {
+    position: static;
+    height: auto;
+    flex: 1;
   }
   .ribbons__row--1 .ribbons__track,
   .ribbons__row--2 .ribbons__track,
   .ribbons__row--3 .ribbons__track {
-    animation: none;
-  }
-  /* Each track holds its 6 images twice (leftover from the old infinite
-     marquee, which needed a duplicated copy to loop seamlessly). The
-     grid doesn't scroll, so only keep the first copy - otherwise the
-     same 6 photos per row show up twice in the mosaic. */
-  .ribbons__track img:nth-child(n + 7) {
-    display: none;
-  }
-  .ribbons__track img {
-    width: 100%;
-    height: 100%;
-    aspect-ratio: auto;
-    object-fit: cover;
-    border-radius: 0;
-    filter: grayscale(0.35) contrast(1.05);
     animation: none;
   }
 }
@@ -501,8 +484,13 @@ section {
   scrollbar-width: none;
   -ms-overflow-style: none;
   touch-action: pan-y;
-  margin: 0 -32px;
-  padding: 0 32px;
+  /* Full-bleed breakout: .wrap is centered with a max-width, so a plain
+     negative margin only cancels its padding, not its own side gutters
+     on wide screens. width:100vw + this margin makes the carousel span
+     the true viewport edge to edge regardless of the parent. */
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
 }
 
 .carousel::-webkit-scrollbar {
