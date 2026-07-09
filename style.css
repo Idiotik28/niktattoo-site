@@ -315,26 +315,6 @@ img {
   .hero {
     padding-top: 150px;
   }
-
-  /* Static, evenly-spaced rows (back to the ribbon look, not a grid).
-     flex layout physically cannot overlap regardless of screen height -
-     that's what broke last time with fixed top:%/height math. Animation
-     stays off since that was the main source of scroll jank. */
-  .ribbons {
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-  }
-  .ribbons__row {
-    position: static;
-    height: auto;
-    flex: 1;
-  }
-  .ribbons__row--1 .ribbons__track,
-  .ribbons__row--2 .ribbons__track,
-  .ribbons__row--3 .ribbons__track {
-    animation: none;
-  }
 }
 
 .nav__cta:hover,
@@ -507,7 +487,7 @@ section {
 
 .carousel__track {
   display: flex;
-  gap: 10px;
+  gap: 14px;
   width: max-content;
 }
 
