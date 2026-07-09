@@ -343,7 +343,12 @@ img {
   flex-direction: column;
   align-items: center;
   gap: 4px;
-  margin-top: 30vh;
+  /* Pinned near the bottom of the hero (hero has justify-content:center
+     + a single child, so margin-top:auto pushes it to the bottom edge).
+     The hero's 80px bottom padding keeps it off the very edge. This
+     stays fully visible on any viewport height, unlike a fixed vh
+     offset which overflowed short laptop screens. */
+  margin-top: auto;
 }
 
 .hero__logo {
