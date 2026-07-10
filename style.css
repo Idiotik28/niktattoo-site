@@ -315,6 +315,12 @@ img {
   .hero {
     padding-top: 150px;
   }
+  /* On mobile the bottom-pinned logo sat too low; lift it up so it
+     sits in the lower-middle instead of against the bottom edge. */
+  .hero__content {
+    margin-top: 0;
+    margin-bottom: 12vh;
+  }
 }
 
 .nav__cta:hover,
