@@ -3,6 +3,21 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=110602935', 'ym');
+
+    ym(110602935, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/110602935" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
 <title>Никита — тату-мастер, Москва</title>
 <meta name="description" content="Авторские татуировки в технике блэкворк и дотворк. Москва, 7 лет опыта. Портфолио работ и запись на консультацию." />
 <link rel="canonical" href="https://nikitattoo.ru/" />
@@ -467,6 +482,14 @@
   createCarousel('worksCarousel1', 'worksTrack1', 0.5, false);
   createCarousel('worksCarousel2', 'worksTrack2', 0.4, true);
   createCarousel('worksCarousel3', 'worksTrack3', 0.55, false);
+
+  // Метрика: считаем клик по любой ссылке в Telegram как цель "telegram"
+  document.addEventListener('click', function (e) {
+    var link = e.target.closest('a[href*="t.me"]');
+    if (link && typeof window.ym === 'function') {
+      window.ym(110602935, 'reachGoal', 'telegram');
+    }
+  });
 </script>
 
 </body>
