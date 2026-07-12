@@ -315,13 +315,8 @@ img {
   .hero {
     padding-top: 150px;
   }
-  /* Mobile keeps the logo at its own spot, independent of the desktop
-     base rule: margin-top:auto + margin-bottom:18vh lands it near the
-     vertical center. */
-  .hero__content {
-    margin-top: auto;
-    margin-bottom: 18vh;
-  }
+  /* hero__content position is now unified for all devices (absolute,
+     anchored to ribbon row 2 center) — no mobile-specific override needed. */
 }
 
 .nav__cta:hover,
@@ -333,26 +328,32 @@ img {
 
 .hero {
   position: relative;
-  min-height: 100svh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  /* 100vh (layout viewport) matches the .ribbons container, which is
+     position:fixed; inset:0. Using the SAME height reference is what lets
+     the logo line up with the middle ribbon row on every device. */
+  min-height: 100vh;
   text-align: center;
   overflow: hidden;
   padding: 120px 24px 80px;
 }
 
 .hero__content {
-  position: relative;
+  /* Anchored to the vertical center of ribbon row 2 (which sits at
+     top:44% with height:210px, so its center is 44% + 105px). Same
+     reference + same math as the ribbons => they align on ALL devices,
+     regardless of screen height. No per-device vh tuning needed. */
+  position: absolute;
+  left: 0;
+  right: 0;
+  /* 44% + 105px = center of ribbon row 2; +12px compensates for the
+     subtitle below the logo so the LOGO itself lands on the row center. */
+  top: calc(44% + 117px);
+  transform: translateY(-50%);
   z-index: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 4px;
-  /* No margins here: the hero centers this block vertically via
-     justify-content:center (the original look). Mobile sets its own
-     margins in the max-width:700px block, so it is unaffected. */
 }
 
 .hero__logo {
